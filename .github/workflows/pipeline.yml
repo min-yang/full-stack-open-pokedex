@@ -26,3 +26,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "min-yang-pokedex"
           heroku_email: "ym591276727@live.com"
+          healthcheck: "https://min-yang-pokedex.herokuapp.com/health"
+          checkstring: "ok"
