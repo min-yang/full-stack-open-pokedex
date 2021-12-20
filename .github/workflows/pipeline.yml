@@ -32,12 +32,11 @@ jobs:
           wait-on: http://localhost:5000
       - name: heroku-deploy
         if: ${{ github.event_name == 'push' }}
-        run:
-          uses: akhileshns/heroku-deploy@v3.12.12
-          with:
-            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-            heroku_app_name: "min-yang-pokedex"
-            heroku_email: "ym591276727@live.com"
-            healthcheck: "https://min-yang-pokedex.herokuapp.com/health"
-            checkstring: "ok"
-            rollbackonhealthcheckfailed: true
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "min-yang-pokedex"
+          heroku_email: "ym591276727@live.com"
+          healthcheck: "https://min-yang-pokedex.herokuapp.com/health"
+          checkstring: "ok"
+          rollbackonhealthcheckfailed: true
