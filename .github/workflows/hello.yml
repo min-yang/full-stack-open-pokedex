@@ -28,4 +28,4 @@ jobs:
         run: echo "$EVENT_NAME"
       - name: test condition
         if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
-        run: echo "empty message"
+        run: echo "ok"
