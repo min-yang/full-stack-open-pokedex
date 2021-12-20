@@ -26,5 +26,5 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
         if: ${{ github.event_name == 'push' }}
-        if: ${{ contains(toJson(github.event.commits.*.message), '#skip') }}
-        run: echo "$EVENT_NAME"
+          if: ${{ contains(join(toJson(github.event.commits.*.message)), '#skip') }}
+          run: echo "$EVENT_NAME"
